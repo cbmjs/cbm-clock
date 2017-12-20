@@ -11,10 +11,10 @@ this.panel.style.backgroundColor = this.bgColor;
 this.panel.style.border = 'solid 3px #6C7B8B';
 this.panel.style.width = this.width + 'px';
 this.panel.style.height = this.width + 'px';
-this.panel.style.position = 'relative';
+this.panel.style.position = 'absolute';
 this.container.appendChild(this.panel);
 
-let ul = document.createElement('ul');
+var ul = document.createElement('ul');
 ul.style.height = '100%';
 
 ul.style.padding = '0';
@@ -27,8 +27,8 @@ ul.style.left = this.width / 2 - 20 + 'px';
 ul.style.color = this.foreColor;
 this.panel.appendChild(ul);
 
-for (let i = 0; i <= 5; i++) {
-  let list = document.createElement('li');
+for (var i = 0; i < 6; i++) {
+  var list = document.createElement('li');
   list.style.padding = '0';
   list.style.margin = '0';
   list.style.position = 'absolute';
@@ -40,7 +40,7 @@ for (let i = 0; i <= 5; i++) {
 
   list.style.transform = 'rotate(' + 360 / 12 * (i + 1) + 'deg)';
 
-  let numTop = document.createElement('div');
+  var numTop = document.createElement('div');
   numTop.style.width = '100%';
   numTop.style.position = 'absolute';
   numTop.style.textAlign = 'center';
@@ -52,7 +52,7 @@ for (let i = 0; i <= 5; i++) {
 
   numTop.style.transform = 'rotate(' + -360 / 12 * (i + 1) + 'deg)';
 
-  let numBottom = document.createElement('div');
+  var numBottom = document.createElement('div');
   numBottom.style.width = '100%';
   numBottom.style.position = 'absolute';
   numBottom.style.textAlign = 'center';
@@ -67,10 +67,10 @@ for (let i = 0; i <= 5; i++) {
 }
 
 // hour hand
-let hour = document.createElement('div');
-let hourWidth = this.width * 0.02;
-let hourTop = this.width * 0.25 - (hourWidth * 0.5);
-let hourleft = this.width * 0.5 - hourWidth * 0.5;
+var hour = document.createElement('div');
+var hourWidth = this.width * 0.02;
+var hourTop = this.width * 0.25 - (hourWidth * 0.5);
+var hourleft = this.width * 0.5 - hourWidth * 0.5;
 hour.style.width = hourWidth + 'px';
 hour.style.height = hourWidth + 'px';
 hour.style.position = 'absolute';
@@ -82,10 +82,10 @@ hour.style.borderBottomWidth = (this.width * 0.5 - hourTop) + 'px';
 this.panel.appendChild(hour);
 
 // minute hand
-let min = document.createElement('div');
-let minWidth = this.width * 0.01;
-let minTop = this.width * 0.1 - (minWidth * 0.5);
-let minleft = this.width * 0.5 - minWidth * 0.5;
+var min = document.createElement('div');
+var minWidth = this.width * 0.01;
+var minTop = this.width * 0.1 - (minWidth * 0.5);
+var minleft = this.width * 0.5 - minWidth * 0.5;
 min.style.width = minWidth + 'px';
 min.style.height = minWidth + 'px';
 min.style.position = 'absolute';
@@ -97,9 +97,9 @@ min.style.borderBottomWidth = (this.width * 0.5 - minTop) + 'px';
 this.panel.appendChild(min);
 
 // second hand
-let sec = document.createElement('div');
-let secWidth = 1;
-let secTop = this.width * 0.05;
+var sec = document.createElement('div');
+var secWidth = 1;
+var secTop = this.width * 0.05;
 sec.style.width = secWidth + 'px';
 sec.style.height = secWidth + 'px';
 sec.style.position = 'absolute';
@@ -111,8 +111,8 @@ sec.style.borderBottomWidth = (this.width * 0.5 - secTop) + 'px';
 this.panel.appendChild(sec);
 
 // the center point
-let point = document.createElement('div');
-let pointWidth = this.width * 0.05;
+var point = document.createElement('div');
+var pointWidth = this.width * 0.05;
 point.style.width = pointWidth + 'px';
 point.style.height = pointWidth + 'px';
 point.style.position = 'absolute';

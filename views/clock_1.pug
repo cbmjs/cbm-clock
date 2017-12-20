@@ -4,7 +4,7 @@ block body
     div
       script(src='https://gist.github.com/iamnapo/cfee15c288a4af23db90a2dd759962e2.js')
   script.
-    var socket = io.connect('/1');
+    const socket = io.connect('/1');
     socket.emit('clock1');
     socket.on('data1', (data) => {
       let roS = 1.0 * 360 / 60 * data.seconds;

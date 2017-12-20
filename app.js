@@ -17,6 +17,7 @@ const clock2 = require('./scripts/gbn');
 const clock3 = require('./scripts/gbm');
 const clock4 = require('./scripts/cbm-sameUnits');
 const clock5 = require('./scripts/cbm-differentUnits');
+const clock6 = require('./scripts/ask');
 
 app.get('/', (req, res) => res.render('landing', { title: 'CallByMeaning demo' }));
 app.get('/1', (req, res) => res.render('clock_1', { title: 'Default JavaScript' }));
@@ -24,6 +25,8 @@ app.get('/2', (req, res) => res.render('clock_2', { title: 'Get by name' }));
 app.get('/3', (req, res) => res.render('clock_3', { title: 'Get by meaning' }));
 app.get('/4', (req, res) => res.render('clock_4', { title: 'Call by meaning with existing units' }));
 app.get('/5', (req, res) => res.render('clock_5', { title: 'Call by meaning with different units' }));
+app.get('/6', (req, res) => res.render('clock_6', { title: 'Just Ask' }));
+
 app.get('*', (req, res) => res.status(404).send('Hmm... How did you end up here?'));
 
 let io1;
@@ -84,6 +87,18 @@ io.of('/5').on('connection', (socket) => {
   });
   socket.on('disconnect', () => {
     clearInterval(io5);
+  });
+});
+
+let io6;
+io.of('/6').on('connection', (socket) => {
+  socket.on('clock6', () => {
+    io1 = setInterval(() => {
+      clock6().then(times => io.of('/6').emit('data6', times));
+    }, 1000);
+  });
+  socket.on('disconnect', () => {
+    clearInterval(io6);
   });
 });
 
