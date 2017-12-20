@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cbmjs/cbm-clock#readme",
   "dependencies": {
-    "cbm-api": "^1.1.0",
+    "@cbmjs/cbm-api": "^1.2.1",
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4",
     "serve-favicon": "^2.4.5",

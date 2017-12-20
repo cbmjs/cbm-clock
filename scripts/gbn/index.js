@@ -1,6 +1,6 @@
-/* eslint-disable no-bitwise, no-eval */
+/* eslint-disable no-eval */
 
-const CallByMeaning = require('cbm-api'); // eslint-disable-line
+const CallByMeaning = require('@cbmjs/cbm-api');
 
 const cbm = new CallByMeaning();
 
@@ -21,9 +21,9 @@ async function clock() {
   const result = await cbm.lookup('getTime'); // **
   const getTime = eval(cbm.getCode(result.body.sourceCode));
   const time = getTime();
-  const seconds = ~~(time / 1000) % 60;
-  const minutes = ~~((time / 1000) / 60) % 60;
-  const hours = (~~((time / 1000) / 60 / 60) % 24) + 2; // + 2 for local time
+  const seconds = Math.floor(time / 1000) % 60;
+  const minutes = Math.floor((time / 1000) / 60) % 60;
+  const hours = (Math.floor((time / 1000) / 60 / 60) % 24) + 2; // + 2 for local time
   return { seconds, minutes, hours };
 }
 
