@@ -19,7 +19,7 @@ const clock4 = require('./scripts/cbm-sameUnits');
 const clock5 = require('./scripts/cbm-differentUnits');
 const clock6 = require('./scripts/ask');
 
-app.get('/', (req, res) => res.render('landing', { title: 'CallByMeaning demo' }));
+app.get('/', (req, res) => res.render('landing', { title: 'cbmjs demo' }));
 app.get('/1', (req, res) => res.render('clock_1', { title: 'Default JavaScript' }));
 app.get('/2', (req, res) => res.render('clock_2', { title: 'Get by name' }));
 app.get('/3', (req, res) => res.render('clock_3', { title: 'Get by meaning' }));

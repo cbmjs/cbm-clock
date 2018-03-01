@@ -1,7 +1,7 @@
 {
   "name": "cbm-clock",
   "version": "1.0.0",
-  "description": "A simple one page app that displays an analog clock, used to demonstrate the CallByMeaning project.",
+  "description": "A simple one page app that displays an analog clock, used to demonstrate the cbmjs project.",
   "main": "app.js",
   "scripts": {
     "start": "curl -Is https://call-by-meaning.herokuapp.com/ && node app.js"
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cbmjs/cbm-clock#readme",
   "dependencies": {
-    "@cbmjs/cbm-api": "^1.4.0",
+    "@cbmjs/cbm-api": "^1.5.0",
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4",
     "serve-favicon": "^2.4.5",

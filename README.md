@@ -1,3 +1,3 @@
 # cbm-clock
 
-A simple one page app that displays an analog clock, used to demonstrate the CallByMeaning project.
+A simple one page app that displays an analog clock, used to demonstrate the cbmjs project.
