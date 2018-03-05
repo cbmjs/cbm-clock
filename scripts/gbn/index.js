@@ -2,7 +2,7 @@
 
 const CallByMeaning = require('@cbmjs/cbm-api');
 
-const cbm = new CallByMeaning();
+const cbm = new CallByMeaning(process.env.HOST);
 
 // Create a function in the server for future reference
 // const params = {
@@ -19,7 +19,7 @@ const cbm = new CallByMeaning();
 
 async function clock() {
   const result = await cbm.lookup('getTime'); // **
-  const getTime = eval(cbm.getCode(result.body.sourceCode));
+  const getTime = eval(await cbm.getCode(result.body.sourceCode));
   const time = getTime();
   const seconds = Math.floor(time / 1000) % 60;
   const minutes = Math.floor((time / 1000) / 60) % 60;

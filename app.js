@@ -4,6 +4,8 @@ const socketio = require('socket.io');
 const favicon = require('serve-favicon');
 const path = require('path');
 
+require('dotenv').load();
+
 const app = express();
 const httpServer = http.createServer(app);
 const io = socketio.listen(httpServer);

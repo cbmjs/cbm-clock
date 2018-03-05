@@ -1,10 +1,10 @@
 const CallByMeaning = require('@cbmjs/cbm-api');
 
 
-const cbm = new CallByMeaning();
+const cbm = new CallByMeaning(process.env.HOST);
 
 async function clock() {
-  let time = await cbm.call({ outputNodes: 'time', outputUnits: 'milliseconds' }); time = time.body;
+  let time = await cbm.call({ outputConcepts: 'time', outputUnits: 'milliseconds' }); time = time.body;
   const seconds = Math.floor(time / 1000) % 60;
   const minutes = Math.floor((time / 1000) / 60) % 60;
   const hours = (Math.floor((time / 1000) / 60 / 60) % 24) + 2; // + 2 for local time

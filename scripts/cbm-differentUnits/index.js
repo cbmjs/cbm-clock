@@ -1,6 +1,6 @@
 const CallByMeaning = require('@cbmjs/cbm-api');
 
-const cbm = new CallByMeaning();
+const cbm = new CallByMeaning(process.env.HOST);
 
 async function clock() {
   const secondsUNIX = (await cbm.call('time', 'seconds')).body;
