@@ -33,81 +33,81 @@ app.get('*', (req, res) => res.status(404).send('Hmm... How did you end up here?
 
 let io1;
 io.of('/1').on('connection', (socket) => {
-  socket.on('clock1', () => {
-    io1 = setInterval(() => {
-      const times = clock1();
-      io.of('/1').emit('data1', times);
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io1);
-  });
+	socket.on('clock1', () => {
+		io1 = setInterval(() => {
+			const times = clock1();
+			io.of('/1').emit('data1', times);
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io1);
+	});
 });
 
 let io2;
 io.of('/2').on('connection', (socket) => {
-  socket.on('clock2', () => {
-    io1 = setInterval(() => {
-      clock2().then(times => io.of('/2').emit('data2', times));
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io2);
-  });
+	socket.on('clock2', () => {
+		io1 = setInterval(() => {
+			clock2().then(times => io.of('/2').emit('data2', times));
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io2);
+	});
 });
 
 let io3;
 io.of('/3').on('connection', (socket) => {
-  socket.on('clock3', () => {
-    io1 = setInterval(() => {
-      clock3().then(times => io.of('/3').emit('data3', times));
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io3);
-  });
+	socket.on('clock3', () => {
+		io1 = setInterval(() => {
+			clock3().then(times => io.of('/3').emit('data3', times));
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io3);
+	});
 });
 
 let io4;
 io.of('/4').on('connection', (socket) => {
-  socket.on('clock4', () => {
-    io1 = setInterval(() => {
-      clock4().then(times => io.of('/4').emit('data4', times));
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io4);
-  });
+	socket.on('clock4', () => {
+		io1 = setInterval(() => {
+			clock4().then(times => io.of('/4').emit('data4', times));
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io4);
+	});
 });
 
 let io5;
 io.of('/5').on('connection', (socket) => {
-  socket.on('clock5', () => {
-    io1 = setInterval(() => {
-      clock5().then(times => io.of('/5').emit('data5', times));
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io5);
-  });
+	socket.on('clock5', () => {
+		io1 = setInterval(() => {
+			clock5().then(times => io.of('/5').emit('data5', times));
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io5);
+	});
 });
 
 let io6;
 io.of('/6').on('connection', (socket) => {
-  socket.on('clock6', () => {
-    io1 = setInterval(() => {
-      clock6().then(times => io.of('/6').emit('data6', times));
-    }, 1000);
-  });
-  socket.on('disconnect', () => {
-    clearInterval(io6);
-  });
+	socket.on('clock6', () => {
+		io1 = setInterval(() => {
+			clock6().then(times => io.of('/6').emit('data6', times));
+		}, 1000);
+	});
+	socket.on('disconnect', () => {
+		clearInterval(io6);
+	});
 });
 
 const port = process.env.PORT || 3000;
 const myServer = httpServer.listen(port, () => {
-  console.log('Server started at http://localhost:%s. Have fun. 😀', port);
+	console.log('Server started at http://localhost:%s. Have fun. 😀', port);
 });
 exports.close = () => {
-  myServer.close();
+	myServer.close();
 };

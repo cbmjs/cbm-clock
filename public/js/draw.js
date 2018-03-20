@@ -28,42 +28,42 @@ ul.style.color = this.foreColor;
 this.panel.appendChild(ul);
 
 for (var i = 0; i < 6; i++) {
-  var list = document.createElement('li');
-  list.style.padding = '0';
-  list.style.margin = '0';
-  list.style.position = 'absolute';
-  list.style.textAlign = 'center';
-  list.style.width = '40px';
-  list.style.height = this.width + 'px';
-  list.style.fontSize = this.width / 10 + 'px';
-  ul.appendChild(list);
+	var list = document.createElement('li');
+	list.style.padding = '0';
+	list.style.margin = '0';
+	list.style.position = 'absolute';
+	list.style.textAlign = 'center';
+	list.style.width = '40px';
+	list.style.height = this.width + 'px';
+	list.style.fontSize = this.width / 10 + 'px';
+	ul.appendChild(list);
 
-  list.style.transform = 'rotate(' + 360 / 12 * (i + 1) + 'deg)';
+	list.style.transform = 'rotate(' + 360 / 12 * (i + 1) + 'deg)';
 
-  var numTop = document.createElement('div');
-  numTop.style.width = '100%';
-  numTop.style.position = 'absolute';
-  numTop.style.textAlign = 'center';
-  numTop.innerHTML = i + 1;
-  if (this.width < 100) {
-    numTop.innerHTML = '●';
-  }
-  list.appendChild(numTop);
+	var numTop = document.createElement('div');
+	numTop.style.width = '100%';
+	numTop.style.position = 'absolute';
+	numTop.style.textAlign = 'center';
+	numTop.innerHTML = i + 1;
+	if (this.width < 100) {
+		numTop.innerHTML = '●';
+	}
+	list.appendChild(numTop);
 
-  numTop.style.transform = 'rotate(' + -360 / 12 * (i + 1) + 'deg)';
+	numTop.style.transform = 'rotate(' + -360 / 12 * (i + 1) + 'deg)';
 
-  var numBottom = document.createElement('div');
-  numBottom.style.width = '100%';
-  numBottom.style.position = 'absolute';
-  numBottom.style.textAlign = 'center';
-  numBottom.style.bottom = '0';
-  numBottom.innerHTML = i + 7;
-  if (this.width < 100) {
-    numBottom.innerHTML = '●';
-  }
-  list.appendChild(numBottom);
+	var numBottom = document.createElement('div');
+	numBottom.style.width = '100%';
+	numBottom.style.position = 'absolute';
+	numBottom.style.textAlign = 'center';
+	numBottom.style.bottom = '0';
+	numBottom.innerHTML = i + 7;
+	if (this.width < 100) {
+		numBottom.innerHTML = '●';
+	}
+	list.appendChild(numBottom);
 
-  numBottom.style.transform = 'rotate(' + -360 / 12 * (i + 1) + 'deg)';
+	numBottom.style.transform = 'rotate(' + -360 / 12 * (i + 1) + 'deg)';
 }
 
 // hour hand

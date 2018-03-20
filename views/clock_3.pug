@@ -1,16 +1,16 @@
 extends header.pug
 block body
-  div(class='jumbotron col-md-6 d-flex align-items-center text-center')
-    div
-      script(src='https://gist.github.com/iamnapo/c66bf54ea71860837f6d413b67858336.js')
-  script.
-    const socket = io.connect('/3');
-    socket.emit('clock3');
-    socket.on('data3', (data) => {
-      let roS = 1.0 * 360 / 60 * data.seconds;
-      let roM = 1.0 * 360 / 60 * data.minutes;
-      let roH = 1.0 * 360 / 12 * (data.hours % 12) + 1.0 * 360 / 12 * (data.minutes / 60);
-      sec.style.transform = 'rotate(' + roS + 'deg)';
-      min.style.transform = 'rotate(' + roM + 'deg)';
-      hour.style.transform = 'rotate(' + roH + 'deg)';
-    });
+	div(class='jumbotron col-md-6 d-flex align-items-center text-center')
+		div
+			script(src='https://gist.github.com/iamnapo/c66bf54ea71860837f6d413b67858336.js')
+	script.
+		const socket = io.connect('/3');
+		socket.emit('clock3');
+		socket.on('data3', (data) => {
+			let roS = 1.0 * 360 / 60 * data.seconds;
+			let roM = 1.0 * 360 / 60 * data.minutes;
+			let roH = 1.0 * 360 / 12 * (data.hours % 12) + 1.0 * 360 / 12 * (data.minutes / 60);
+			sec.style.transform = 'rotate(' + roS + 'deg)';
+			min.style.transform = 'rotate(' + roM + 'deg)';
+			hour.style.transform = 'rotate(' + roH + 'deg)';
+		});

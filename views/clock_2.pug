@@ -1,19 +1,19 @@
 extends header.pug
 block body
-  div(class='jumbotron col-md-6 d-flex align-items-center text-center')
-    div(class='row')
-      div
-        script(src='https://gist.github.com/iamnapo/ef9e3244660e7ac4c889c5c4237af8c1.js')
-      div
-        script(src='https://gist.github.com/iamnapo/02180187294dcc097c6a795a9e454cc8.js')
-  script.
-    const socket = io.connect('/2');
-    socket.emit('clock2');
-    socket.on('data2', (data) => {
-      let roS = 1.0 * 360 / 60 * data.seconds;
-      let roM = 1.0 * 360 / 60 * data.minutes;
-      let roH = 1.0 * 360 / 12 * (data.hours % 12) + 1.0 * 360 / 12 * (data.minutes / 60);
-      sec.style.transform = 'rotate(' + roS + 'deg)';
-      min.style.transform = 'rotate(' + roM + 'deg)';
-      hour.style.transform = 'rotate(' + roH + 'deg)';
-    });
+	div(class='jumbotron col-md-6 d-flex align-items-center text-center')
+		div(class='row')
+			div
+				script(src='https://gist.github.com/iamnapo/ef9e3244660e7ac4c889c5c4237af8c1.js')
+			div
+				script(src='https://gist.github.com/iamnapo/02180187294dcc097c6a795a9e454cc8.js')
+	script.
+		const socket = io.connect('/2');
+		socket.emit('clock2');
+		socket.on('data2', (data) => {
+			let roS = 1.0 * 360 / 60 * data.seconds;
+			let roM = 1.0 * 360 / 60 * data.minutes;
+			let roH = 1.0 * 360 / 12 * (data.hours % 12) + 1.0 * 360 / 12 * (data.minutes / 60);
+			sec.style.transform = 'rotate(' + roS + 'deg)';
+			min.style.transform = 'rotate(' + roM + 'deg)';
+			hour.style.transform = 'rotate(' + roH + 'deg)';
+		});
