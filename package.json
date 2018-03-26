@@ -22,15 +22,15 @@
     "node": ">=9"
   },
   "dependencies": {
-    "@cbmjs/cbm-api": "^1.5.1",
+    "@cbmjs/cbm-api": "^1.5.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "pug": "^2.0.2",
+    "pug": "^2.0.3",
     "serve-favicon": "^2.4.5",
     "socket.io": "^2.0.4"
   },
   "devDependencies": {
-    "eslint": "^4.19.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jest": "^21.15.0",
