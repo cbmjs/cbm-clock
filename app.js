@@ -47,7 +47,7 @@ io.of('/1').on('connection', (socket) => {
 let io2;
 io.of('/2').on('connection', (socket) => {
 	socket.on('clock2', () => {
-		io1 = setInterval(() => {
+		io2 = setInterval(() => {
 			clock2().then(times => io.of('/2').emit('data2', times));
 		}, 1000);
 	});
@@ -59,7 +59,7 @@ io.of('/2').on('connection', (socket) => {
 let io3;
 io.of('/3').on('connection', (socket) => {
 	socket.on('clock3', () => {
-		io1 = setInterval(() => {
+		io3 = setInterval(() => {
 			clock3().then(times => io.of('/3').emit('data3', times));
 		}, 1000);
 	});
@@ -71,7 +71,7 @@ io.of('/3').on('connection', (socket) => {
 let io4;
 io.of('/4').on('connection', (socket) => {
 	socket.on('clock4', () => {
-		io1 = setInterval(() => {
+		io4 = setInterval(() => {
 			clock4().then(times => io.of('/4').emit('data4', times));
 		}, 1000);
 	});
@@ -83,7 +83,7 @@ io.of('/4').on('connection', (socket) => {
 let io5;
 io.of('/5').on('connection', (socket) => {
 	socket.on('clock5', () => {
-		io1 = setInterval(() => {
+		io5 = setInterval(() => {
 			clock5().then(times => io.of('/5').emit('data5', times));
 		}, 1000);
 	});
@@ -95,7 +95,7 @@ io.of('/5').on('connection', (socket) => {
 let io6;
 io.of('/6').on('connection', (socket) => {
 	socket.on('clock6', () => {
-		io1 = setInterval(() => {
+		io6 = setInterval(() => {
 			clock6().then(times => io.of('/6').emit('data6', times));
 		}, 1000);
 	});
