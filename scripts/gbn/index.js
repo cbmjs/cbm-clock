@@ -10,7 +10,7 @@ const cbm = new CallByMeaning(process.env.HOST);
 //   desc: 'Gets the timestamp of the number of milliseconds that have elapsed since the Unix epoch(1 January 1970 00: 00: 00 UTC).',
 //   returnsNames: 'time',
 //   returnsUnits: 'milliseconds',
-//   codeFile: __dirname.concat('/getTime.js'),
+//   codeFile: __dirname.concat('/get-time.js'),
 // };
 // (async () => {
 //   const res = await cbm.create(params, 'function');
@@ -24,14 +24,14 @@ async function clock() {
 	const seconds = Math.floor(time / 1000) % 60;
 	const minutes = Math.floor((time / 1000) / 60) % 60;
 	const hours = (Math.floor((time / 1000) / 60 / 60) % 24) + 3; // + 2 (or 3) for local time
-	return { seconds, minutes, hours };
+	return {seconds, minutes, hours};
 }
 
 module.exports = clock;
 
 // **
 // {
-//   name: 'getTime',
+//   name: 'get-time',
 //   description: 'Gets the timestamp of the number of milliseconds that have elapsed since the Unix epoch(1 January 1970 00: 00: 00 UTC).',
 //   units: undefined,
 //   argsNames: [],
