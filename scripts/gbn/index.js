@@ -18,13 +18,13 @@ const cbm = new CallByMeaning(process.env.HOST);
 // })().then(res => console.log(res));
 
 async function clock() {
-	const result = await cbm.lookup('getTime'); // **
-	const getTime = eval(await cbm.getCode(result.body.sourceCode));
-	const time = getTime();
-	const seconds = Math.floor(time / 1000) % 60;
-	const minutes = Math.floor((time / 1000) / 60) % 60;
-	const hours = (Math.floor((time / 1000) / 60 / 60) % 24) + 3; // + 2 (or 3) for local time
-	return {seconds, minutes, hours};
+  const result = await cbm.lookup('getTime'); // **
+  const getTime = eval(await cbm.getCode(result.body.sourceCode));
+  const time = getTime();
+  const seconds = Math.floor(time / 1000) % 60;
+  const minutes = Math.floor((time / 1000) / 60) % 60;
+  const hours = (Math.floor((time / 1000) / 60 / 60) % 24) + 3; // + 2 (or 3) for local time
+  return { seconds, minutes, hours };
 }
 
 module.exports = clock;

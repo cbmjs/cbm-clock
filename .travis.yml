@@ -5,10 +5,7 @@ os:
 language: node_js
 node_js:
 - node
-cache:
-  yarn: true
-  directories:
-  - node_modules
+cache: yarn
 deploy:
   provider: heroku
   api_key:
