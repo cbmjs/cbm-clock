@@ -46,8 +46,8 @@ io.of('/1').on('connection', (socket) => {
 let io2;
 io.of('/2').on('connection', (socket) => {
   socket.on('clock2', () => {
-    io2 = setInterval(() => {
-      const times = clock2();
+    io2 = setInterval(async () => {
+      const times = await clock2();
       io.of('/2').emit('data2', times);
     }, 1000);
   });
@@ -59,8 +59,8 @@ io.of('/2').on('connection', (socket) => {
 let io3;
 io.of('/3').on('connection', (socket) => {
   socket.on('clock3', () => {
-    io3 = setInterval(() => {
-      const times = clock3();
+    io3 = setInterval(async () => {
+      const times = await clock3();
       io.of('/3').emit('data3', times);
     }, 1000);
   });
@@ -72,8 +72,8 @@ io.of('/3').on('connection', (socket) => {
 let io4;
 io.of('/4').on('connection', (socket) => {
   socket.on('clock4', () => {
-    io4 = setInterval(() => {
-      const times = clock4();
+    io4 = setInterval(async () => {
+      const times = await clock4();
       io.of('/4').emit('data4', times);
     }, 1000);
   });
@@ -85,8 +85,8 @@ io.of('/4').on('connection', (socket) => {
 let io5;
 io.of('/5').on('connection', (socket) => {
   socket.on('clock5', () => {
-    io5 = setInterval(() => {
-      const times = clock5();
+    io5 = setInterval(async () => {
+      const times = await clock5();
       io.of('/5').emit('data5', times);
     }, 1000);
   });
@@ -98,8 +98,8 @@ io.of('/5').on('connection', (socket) => {
 let io6;
 io.of('/6').on('connection', (socket) => {
   socket.on('clock6', () => {
-    io6 = setInterval(() => {
-      const times = clock6();
+    io6 = setInterval(async () => {
+      const times = await clock6();
       io.of('/6').emit('data6', times);
     }, 1000);
   });
