@@ -38,9 +38,7 @@ io.of("/1").on("connection", (socket) => {
 			io.of("/1").emit("data1", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io1);
-	});
+	socket.on("disconnect", () => clearInterval(io1));
 });
 
 let io2;
@@ -51,9 +49,7 @@ io.of("/2").on("connection", (socket) => {
 			io.of("/2").emit("data2", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io2);
-	});
+	socket.on("disconnect", () => clearInterval(io2));
 });
 
 let io3;
@@ -64,9 +60,7 @@ io.of("/3").on("connection", (socket) => {
 			io.of("/3").emit("data3", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io3);
-	});
+	socket.on("disconnect", () => clearInterval(io3));
 });
 
 let io4;
@@ -77,9 +71,7 @@ io.of("/4").on("connection", (socket) => {
 			io.of("/4").emit("data4", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io4);
-	});
+	socket.on("disconnect", () => clearInterval(io4));
 });
 
 let io5;
@@ -90,9 +82,7 @@ io.of("/5").on("connection", (socket) => {
 			io.of("/5").emit("data5", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io5);
-	});
+	socket.on("disconnect", () => clearInterval(io5));
 });
 
 let io6;
@@ -103,15 +93,8 @@ io.of("/6").on("connection", (socket) => {
 			io.of("/6").emit("data6", times);
 		}, 1000);
 	});
-	socket.on("disconnect", () => {
-		clearInterval(io6);
-	});
+	socket.on("disconnect", () => clearInterval(io6));
 });
 
 const port = process.env.PORT || 3000;
-const myServer = httpServer.listen(port, () => {
-	console.log("Server started at http://localhost:%s. Have fun. 😀", port);
-});
-exports.close = () => {
-	myServer.close();
-};
+httpServer.listen(port, () => console.log("Server started at http://localhost:%s. Have fun. 😀", port));
