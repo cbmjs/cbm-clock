@@ -1,3 +1,4 @@
+/* eslint-env browser */
 this.foreColor = "#E9ECEF";
 this.bgColor = "#666666";
 this.width = 400;
