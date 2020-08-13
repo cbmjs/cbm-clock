@@ -28,7 +28,7 @@
 		"with": "^6.0.0"
 	},
 	"dependencies": {
-		"@cbmjs/cbm-api": "^1.9.0",
+		"@cbmjs/cbm-api": "^1.9.1",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"pug": "^3.0.0",
@@ -36,8 +36,8 @@
 		"socket.io": "^2.3.0"
 	},
 	"devDependencies": {
-		"eslint": "^7.4.0",
-		"eslint-config-iamnapo": "^6.0.3",
+		"eslint": "^7.6.0",
+		"eslint-config-iamnapo": "^7.0.0",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-unicorn": "^21.0.0"
 	},
