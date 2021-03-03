@@ -8,7 +8,7 @@ const favicon = require("serve-favicon");
 
 const app = express();
 const httpServer = http.createServer(app);
-const io = socketio.listen(httpServer);
+const io = socketio(httpServer);
 
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.set("view engine", "pug");
