@@ -9,7 +9,7 @@ block body
 		socket.on('data4', (data) => {
 			let roS = 1.0 * 360 / 60 * data.seconds;
 			let roM = 1.0 * 360 / 60 * data.minutes;
-			let roH = 1.0 * 360 / 12 * (data.hours % 12) + 1.0 * 360 / 12 * (data.minutes / 60);
+			let roH = 1.0 * 360 / 12 * (data.hours % 12) * 360 / 12 * (data.minutes / 60);
 			sec.style.transform = 'rotate(' + roS + 'deg)';
 			min.style.transform = 'rotate(' + roM + 'deg)';
 			hour.style.transform = 'rotate(' + roH + 'deg)';
