@@ -1,25 +1,26 @@
-require("dotenv").config();
-const http = require("http");
-const path = require("path");
+import "dotenv/config";
 
-const express = require("express");
-const socketio = require("socket.io");
-const favicon = require("serve-favicon");
+import { fileURLToPath } from "node:url";
+import http from "node:http";
+import path from "node:path";
+import express from "express";
+import { Server } from "socket.io";
+import favicon from "serve-favicon";
+
+import clock1 from "./scripts/default/index.js";
+import clock2 from "./scripts/gbn/index.js";
+import clock3 from "./scripts/gbm/index.js";
+import clock4 from "./scripts/cbm-sameUnits/index.js";
+import clock5 from "./scripts/cbm-differentUnits/index.js";
+import clock6 from "./scripts/ask/index.js";
 
 const app = express();
 const httpServer = http.createServer(app);
-const io = socketio(httpServer);
+const io = new Server(httpServer);
 
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use(favicon(path.join(path.dirname(fileURLToPath(import.meta.url)), "public", "favicon.ico")));
 app.set("view engine", "pug");
-app.use("/", express.static(path.join(__dirname, "/public")));
-
-const clock1 = require("./scripts/default");
-const clock2 = require("./scripts/gbn");
-const clock3 = require("./scripts/gbm");
-const clock4 = require("./scripts/cbm-sameUnits");
-const clock5 = require("./scripts/cbm-differentUnits");
-const clock6 = require("./scripts/ask");
+app.use("/", express.static(path.join(path.dirname(fileURLToPath(import.meta.url)), "/public")));
 
 app.get("/", (req, res) => res.render("landing", { title: "cbmjs demo" }));
 app.get("/1", (req, res) => res.render("clock_1", { title: "Default JavaScript" }));

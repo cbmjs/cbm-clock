@@ -1,1 +1,1 @@
-module.exports = () => Date.now();
+export default () => Date.now();
