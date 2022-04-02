@@ -1,1 +1,3 @@
-export default () => Date.now();
+const getTime = () => Date.now();
+
+export default getTime;

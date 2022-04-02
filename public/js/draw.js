@@ -49,6 +49,7 @@ for (let i = 0; i < 6; i += 1) {
 	if (this.width < 100) {
 		numTop.innerHTML = "●";
 	}
+
 	list.append(numTop);
 
 	numTop.style.transform = `rotate(${(-360 / 12) * (i + 1)}deg)`;
@@ -62,6 +63,7 @@ for (let i = 0; i < 6; i += 1) {
 	if (this.width < 100) {
 		numBottom.innerHTML = "●";
 	}
+
 	list.append(numBottom);
 
 	numBottom.style.transform = `rotate(${(-360 / 12) * (i + 1)}deg)`;
