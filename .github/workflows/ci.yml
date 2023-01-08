@@ -20,3 +20,6 @@ jobs:
 
       - name: 🧪 Run test script
         run: npm test
+
+      - name: 💻 Trigger deploy
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
