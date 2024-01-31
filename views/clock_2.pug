@@ -13,7 +13,7 @@ block body
 			const roS = (360 / 60) * data.seconds;
 			const roM = (360 / 60) * data.minutes;
 			const roH = (360 / 12) * ((data.hours % 12) + (data.minutes / 60));
-			sec.style.transform = 'rotate(' + roS + 'deg)';
-			min.style.transform = 'rotate(' + roM + 'deg)';
-			hour.style.transform = 'rotate(' + roH + 'deg)';
+			sec.style.transform = `rotate(${roS}deg)`;
+			min.style.transform = `rotate(${roM}deg)`;
+			hour.style.transform = `rotate(${roH}deg)`;
 		});
